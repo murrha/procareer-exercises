@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="style.css" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <title>Pinky Promise</title>
+</head>
+<body>
+
+    <!-- home, about us, products, contact us, grid 
+    navbar, header, footer 
+    modal - login link
+    -->
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="https://thenounproject.com/api/private/icons/2079570/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" width="50" height="50"/>
+          </a>
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="aboutus.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="products.html">Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="contactus.html">Contact Us</a>
+                  </li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+              <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h1 class="modal-title">Login</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <!--login form goes here-->
+
+                              <div class="mb-3">
+                                <!-- svg code -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                </svg>
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text"
+                                  class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="Username">
+                              </div>
+
+                              <div class="mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                  <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                                </svg>
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                              </div>
+                              
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-primary">Login</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+    <div class="container mx-auto p-5">
+        <h2 class="display-4">Welcome!</h2>
+        <p>I am a freelance artist who loves lineart and the color pink.</p>
+        <p>I will be having a gallery exhibition during the whole month of October at Nucleus Art Gallery. Admission is free!</p>
+        <p>Currently not taking commissions!</p>
+    </div>
+
+    <div class="container col-sm-6 mx-auto">
+        <div id="carouselId" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="images/manga-resize.jpg" class="w-100 d-block" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/chinese-pink-resize.jpg" class="w-100 d-block" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/face-resize.jpg" class="w-100 d-block" alt="Third slide">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-5 p-5" id="newsletter">
+        <h2 class="display-4">Newsletter</h2>
+        <p>I send-biweekly emails about print sales, upcoming exhibitions, and online courses I teach. Sign up today!</p>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="subscribe-email" id="subscribe-email" aria-describedby="emailHelpId" placeholder="">
+          <small id="emailHelpId" class="form-text text-muted">We won't spam you everyday</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+    
+    
+    <footer class="d-flex justify-content-center">© Marja Katrina Centina</footer>
+</body>
+</html>
