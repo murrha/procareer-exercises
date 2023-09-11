@@ -12,6 +12,8 @@ async function getWeather(){
     .then((response) => {
         if(response.ok){
             return response.json()
+
+        //alerts if the status is 404
         } else if(response.status === 404){
             alert("Unable to find city. Please try again.");
         }
@@ -21,10 +23,11 @@ async function getWeather(){
 
 function displayData(data){
     document.getElementById('weather').innerHTML = 
-    `<h3></h3>
-    <p>Main: ${data.main.temp - 273.15}</p>
-    <p>Min: ${data.main.temp_min}</p>
-    <p>Max: ${data.main.temp_max}</p>
+    `
+    <img src = "http://openweathermap.org/img/w/${data.weather[0].icon}.png"/>
+    <p>Main: ${Math.floor((data.main.temp - 273.15) * 9/5 + 32)}°F</p>
+    <p>Min: ${Math.floor((data.main.temp_min - 273.15) * 9/5 + 32)}°F</p>
+    <p>Max: ${Math.floor((data.main.temp_max - 273.15) * 9/5 + 32)}°F</p>
     <p>Weather: ${data.weather[0].main}</p>
     <p>Description: ${data.weather[0].description}</p>
     <p>${data.wind.speed}</p>
