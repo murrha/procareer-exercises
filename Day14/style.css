@@ -1,0 +1,18 @@
+body{
+    background-image: url('https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    height: 100vh;
+    background-size: cover;
+}
+
+#weather-input{
+    background-color: #fff;
+    margin-top: 10px; 
+    text-align: center;
+    border-radius: 15px;
+}
+
+#weather{
+    background-color: #fff;
+    text-align: center;
+    border-radius: 15px;
+};

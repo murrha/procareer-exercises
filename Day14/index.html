@@ -12,16 +12,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>How's the weather?</h1>
-        <input type="text" id="city" placeholder="Enter city or zip code"/>
-        <button onclick="getWeather()" type="submit">Enter</button>
-        <p><small>Please enter full names. No abbreviations.</small></p>
-        
-        <h3>Weather Information</h3>
-        <div id="weather">
-           
+    <div class="container-fluid">
+        <div class="container" id="weather-input">
+            <h1>How's the weather?</h1>
+            <input type="text" id="city" placeholder="Enter city or zip code"/>
+            <button onclick="getWeather()" type="submit" class="btn btn-primary">Enter</button>
+            <p><small>Please enter full names. No abbreviations.</small></p>
         </div>
+
+        <div id="weather" class="container">
+            <img id="weather-img" src="" alt="">
+               <p id="weather-temp"></p>
+               <p id="weather-description"></p>
+               <p id="weather-humidity"></p>
+               <p id="wind-speed"></p>
+            </div>
+        
     </div>
     
     
