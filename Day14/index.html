@@ -17,9 +17,13 @@
     <div class="container-fluid">
         <div class="container" id="weather-input">
             <h1>How's the weather?</h1>
-            <input type="text" class="input-group" id="city" placeholder="Enter city or zip code"/>
-            <button onclick="getWeather()" type="submit" class="btn btn-primary">Enter</button>
-            <p><small>Please enter full names. No abbreviations.</small></p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="city" placeholder="Enter city or zip code"/>
+                <div class="input-group-append">
+                    <button onclick="getWeather()" type="submit" class="btn btn-outline-secondary">Enter</button>
+                </div>
+                <p><small>Please enter full names. No abbreviations.</small></p>
+            </div>
         </div>
 
         <div id="weather" class="container">

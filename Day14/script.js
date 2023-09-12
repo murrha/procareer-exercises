@@ -16,6 +16,8 @@ async function getWeather(){
         //alerts if the status is 404
         } else if(response.status === 404){
             alert("Unable to find city. Please try again.");
+        } else if(response.status === 400){
+            alert("Please enter a value.");
         }
     })
     .then(displayWeather);
