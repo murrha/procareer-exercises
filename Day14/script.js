@@ -32,7 +32,7 @@ function displayWeather(data){
     image.src = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
     temperature.innerHTML = `${Math.floor((data.main.temp - 273.15) * 9/5 + 32)}°F`;
     description.innerHTML = `${data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.substring(1)}`; 
-    humidity.innerHTML = `${data.main.humidity}°F`; 
+    humidity.innerHTML = `${data.main.humidity}% humidity`; 
     windSpeed.innerHTML = `${data.wind.speed} kmph`; 
   
 }
