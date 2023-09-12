@@ -23,11 +23,14 @@ async function getWeather(){
 
 function displayWeather(data){
 
+    let weatherDetails = document.querySelector("#weather"); 
     let image = document.querySelector("#weather-img");
     let temperature = document.querySelector("#weather-temp"); 
     let description = document.querySelector("#weather-description");
     let humidity = document.querySelector("#weather-humidity");
     let windSpeed = document.querySelector("#wind-speed");
+
+    weatherDetails.style.display = "block"; 
 
     image.src = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
     temperature.innerHTML = `${Math.floor((data.main.temp - 273.15) * 9/5 + 32)}°F`;

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
 
+    <link rel="icon" type="image/x-icon" href="weather-news.png">
+
     <script src="script.js"></script>
     <link href="style.css" rel="stylesheet"/>
 
@@ -15,7 +17,7 @@
     <div class="container-fluid">
         <div class="container" id="weather-input">
             <h1>How's the weather?</h1>
-            <input type="text" id="city" placeholder="Enter city or zip code"/>
+            <input type="text" class="input-group" id="city" placeholder="Enter city or zip code"/>
             <button onclick="getWeather()" type="submit" class="btn btn-primary">Enter</button>
             <p><small>Please enter full names. No abbreviations.</small></p>
         </div>
