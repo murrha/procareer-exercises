@@ -6,12 +6,15 @@
     <title>Digital Clock</title>
 
     <link rel="stylesheet" href="style.css"/>
-    
+    <link rel="icon" type="image/x-icon" href="clock.png"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
     <!--display date and time with React-->
 
-    <div id="reactdiv">
+    <div id="reactdiv" class="container container-md mx-auto">
         This should change - React 
     </div>
 
@@ -21,14 +24,14 @@
 
         let root = ReactDOM.createRoot(document.getElementById("reactdiv"));
         const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        let day = new Date(); 
         let renderThis = () => {
             
         //React
         let MyReactComp = React.createElement("div", {}, 
-            React.createElement("button", {"className": "clock", "id": "day"}, days[new Date().getDay()]),
-            React.createElement("button", {"className": "clock", "id": "date"}, new Date().getDate()),
-            React.createElement("button", {"className": "clock", "id": "year"}, new Date().getFullYear()),
-            React.createElement("p", {}, new Date().getHours() + ":" +new Date().getMinutes() + ":"+ new Date().getSeconds()),
+            React.createElement("h1", {"className": "clock", "id": "day"}, `${days[day.getDay()]} ${day.getDate()}, ${day.getFullYear()}`),
+            React.createElement("h1", {"id": "militaryTime"}, new Date().getHours() + ":" +new Date().getMinutes() + ":"+ new Date().getSeconds()),
+            React.createElement("h1", {"id": "localTime"}, new Date().toLocaleTimeString())
         );
 
         root.render(MyReactComp); 
@@ -36,6 +39,14 @@
         }
         //1000 ms = 1 sec
         setInterval(renderThis, 1000);
+
+        function toMilitary(){
+
+        }
+
+        function toLocal(){
+
+        }
     </script>
 </body>
 </html>
