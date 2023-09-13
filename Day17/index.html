@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+
+    <link rel="stylesheet" href="style.css"/>
+    
+</head>
+<body>
+    <!--display date and time with React-->
+
+    <div id="reactdiv">
+        This should change - React 
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+
+        let root = ReactDOM.createRoot(document.getElementById("reactdiv"));
+        const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        let renderThis = () => {
+            
+        //React
+        let MyReactComp = React.createElement("div", {}, 
+            React.createElement("button", {"className": "clock", "id": "day"}, days[new Date().getDay()]),
+            React.createElement("button", {"className": "clock", "id": "date"}, new Date().getDate()),
+            React.createElement("button", {"className": "clock", "id": "year"}, new Date().getFullYear()),
+            React.createElement("p", {}, new Date().getHours() + ":" +new Date().getMinutes() + ":"+ new Date().getSeconds()),
+        );
+
+        root.render(MyReactComp); 
+    
+        }
+        //1000 ms = 1 sec
+        setInterval(renderThis, 1000);
+    </script>
+</body>
+</html>
