@@ -4,24 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="root">
-
+    <div class="container mt-5 text-center">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+    
+    <div id="root" class="container mt-5">
+        
+        
     </div>
 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        
-        let MyAccordion = () => {
 
+        //FAQ reference came from UPS https://www.ups.com/gb/en/support/tracking-support.page
+        const input = 
+        {
+                "questions": [
+                    {
+                        "id": "1",
+                        "heading": `My shipment says "Out for Delivery". What time will I get my package?`,
+                        "headingId": "headingOne",
+                        "body": `Generally, our drivers can deliver as late as 7 p.m. During the holiday season, our drivers may deliver even later.
+
+If we are unable to deliver a parcel that shows a status of "out for delivery," we’ll try another delivery on the next business day.`,
+                        "bodyId": "collapseOne"
+                    },
+                    {
+                        "id": "2",
+                        "heading": "Where do I find the latest information on the location of my package?",
+                        "headingId": "headingTwo",
+                        "body": `Tracking your parcel on our website or mobile application will give you the most up-to-date information about the status of your shipment. Check back periodically for shipment progress updates.`,
+                        "bodyId": "collapseTwo"
+                    },
+                    {
+                        "id": "3",
+                        "heading": "How late will you deliver?",
+                        "headingId": "headingThree",
+                        "body": `Parcels are generally delivered anytime Monday through Friday between 9 a.m. and 7 p.m. (and sometimes later) to residences, and to business addresses during their normal business hours.
+
+While parcels can’t be scheduled to arrive at a specific time, express shipments have guaranteed delivery times that vary by service.`,
+                        "bodyId": "collapseThree"
+                    },
+                    {
+                        "id": "4",
+                        "heading": "My shipment says it has been delivered, but I cannot find it. Where is it?",
+                        "headingId": "headingFour",
+                        "body": "Your driver always looks for a safe and protected place to leave your parcel. You can see a photo of the exact delivery location on our website or mobile application. If you still cannot find the parcel, check with a household member, concierge or a neighbour who may have received it for you. If not, contact the seller to start a claim.",
+                        "bodyId": "collapseFour"
+                    },
+                    {
+                        "id": "5",
+                        "heading": "I have an issue with my delivery. What can I do?",
+                        "headingId": "headingFive",
+                        "body": "You may file a claim on our website here if you are experiencing issues with your parcel. We will investigate the issue.",
+                        "bodyId": "collapseFive"
+                    }
+                ]
+         }; 
+            
+        let MyAccordion = (props) => {
+
+            //returning new array that will print out each accordion item
+            let d = props.data.questions.map((question) => {
+                //console.log(question.headingId)
+
+                //need to add # for the id for data-bs-toggle 
+                let target = "#" + question.bodyId; 
+                return <div class="accordion-item">
+                        <h2 class="accordion-header" id= {question.headingId}>
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={target} aria-expanded="true" aria-controls={question.bodyId}>
+                                {question.heading}
+                            </button>
+                        </h2>
+                        <div id={question.bodyId} class="accordion-collapse collapse" aria-labelledby={question.headingId} data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {question.body}
+                            </div>
+                        </div>
+                    </div>
+
+            });
+
+            return(
+             <div class="accordion" id="accordionExample">
+                {d}          
+            </div>
+            )
         }
 
         let root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<><MyAccordion/> </>);
+        root.render(<><MyAccordion data={input}/></>);
     </script>
     
 </body>
