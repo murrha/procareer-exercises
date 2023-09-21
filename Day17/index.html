@@ -12,6 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <div id="vanilla" class="container container-md mx-auto">
+        This should change - HTML
+    </div>
     <!--display date and time with React-->
 
     <div id="reactdiv" class="container container-md mx-auto">
@@ -31,10 +35,20 @@
         //function expression that will add components to the div
         let renderThis = () => {
 
+        //inner HTML
+        let str = `<h1>Vanilla JS </h1> <h2> ${days[day.getDay()]} ${day.getDate()}, ${day.getFullYear()} </h2> 
+        <h2>${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()} </h2> 
+        <h2>${new Date().toLocaleTimeString()}</h2>
+        <input/><hr>`; 
+        document.getElementById("vanilla").innerHTML = str; 
+
         //creating elements for each component
-        let MyReactComp = React.createElement("div", {}, [ React.createElement("h1", {"id": "day"}, `${days[day.getDay()]} ${day.getDate()}, ${day.getFullYear()}`),
-        React.createElement("h1", {"id": "militaryTime"}, new Date().getHours() + ":" + new Date().getMinutes() + ":"+ new Date().getSeconds()),
-        React.createElement("h1", {"id": "localTime"}, new Date().toLocaleTimeString())]);
+        let MyReactComp = React.createElement("div", {}, [ 
+        React.createElement("h1", {}, "React JS"),
+        React.createElement("h2", {"id": "day"}, `${days[day.getDay()]} ${day.getDate()}, ${day.getFullYear()}`),
+        React.createElement("h2", {"id": "militaryTime"}, new Date().getHours() + ":" + new Date().getMinutes() + ":"+ new Date().getSeconds()),
+        React.createElement("h2", {"id": "localTime"}, new Date().toLocaleTimeString()),
+        React.createElement("input", {}, null),]);
 
         //renders to the root
         root.render(MyReactComp); 
